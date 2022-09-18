@@ -1,0 +1,9 @@
+def birthdayCakeCandles(candles):
+    biggest = max(candles)
+    count = 0
+    for i in candles:
+        if i == biggest:
+            count += 1
+    return count
+    
+#Takes the maximum value in an array and returns a count of how often that maximum occurs
