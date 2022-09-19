@@ -1,0 +1,11 @@
+def timeConversion(s):
+    time_12 = s.strip()
+    time_in_pm = time_12[-2:].lower() == 'pm'
+    time_list = list(map(int, time_12[:-2].split(':')))
+    if not time_in_pm and time_list[0] == 12:
+        time_list[0] = 0
+    if time_in_pm and time_list[0] < 12:
+        time_list[0] += 12
+    return(':'.join(map(lambda x: str(x).rjust(2, '0'), time_list)))
+
+#This function takes the input variable, strips white space, checks if the submitted time is PM, and if so converts to 24-hour time
